@@ -16,6 +16,7 @@ services:
 
     ports:
       - "3306:3306"
+    restart: unless-stopped
 
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
