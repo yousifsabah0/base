@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  postgre:
+    # For production, use a specific version of the Postgres
+    #  image.
+    image: postgres:latest
+
+    # For container names, I follow a convention of combining
+    # the first letter of the project name with the image name.
+    container_name: bpostgres
+
+    ports:
+      - 5432:5432 # I prefer to use ${DATABASE_PORT}:5432...
+        # why? IDK.
+
+    restart: unless-stopped
+
+    environment:
+      - POSTGRES_DB=${DATABASE_NAME}
+      - POSTGRES_NAME=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASS}
+
+    env_file:
+      - .env
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DATABASE_USER} -d ${DATABASE_NAME}"]
+      start_period: 10s
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+    driver: local
