@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  mysql:
+    # For production, use a specific version of the Postgres
+    #  image.
+    image: mysql:latest
+
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DATABASE_PASS} # I like to use the same password
+      - MYSQL_DATABASE=${DATABASE_NAME}
+      - MYSQL_USER=${DATABASE_USER}
+      - MYSQL_PASSWORD=${DATABASE_PASS}
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+    ports:
+      - "3306:3306"
+
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mysql_data:
+    driver: local
