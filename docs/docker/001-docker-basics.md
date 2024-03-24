@@ -5,6 +5,7 @@ In this guide we'll learn everything about Docker.
 - [What is Docker ?](#what-is-docker)
 - [How Docker works ?](#how-docker-works)
 - [Which problems Docker solves ?](#which-problems-docker-solves)
+- [Benefits of using Docker](#benefits-of-using-docker)
 
 ## What is Docker ?
 
@@ -27,3 +28,11 @@ There's 3 key concepts of Docker
 - **Slow deployments** / Deploying applications can be a slow and error-prone process. Docker allows for faster and more reliable deployments by packaging everything together.
 
 - **Wasted resources** / Virtual machines can be resource-intensive. Containers are lightweight and share the underlying operating system, making them more efficient.
+
+## Benefits of using Docker
+
+- Portability / Any application packaged in a Docker container can run on any system that has Docker installed, regardless of the underlying operating system. And, this makes it's easy to move application(s) between development, production, and testing.
+
+- Isolation / Each Docker container runs on it's own isolated environment, which means that applications don't conflict with each other or with the underlying system.
+
+- Scalability / Docker containers can be easily scaled up or down to meet the demands of the application.
