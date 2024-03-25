@@ -10,3 +10,17 @@ Both containerization and virtualization are methods for isolating applications,
 
 - Virtualization / Creates a virtual machine (VM) with a complete guest operating system, offering a higher level of isolation but consuming more resources.
 - Containerization / Packages an application with its dependencies, sharing the host kernel and offering greater resource efficiency and faster deployment.
+
+## Practical Example
+
+Traditionally, deploying an application could involve:
+
+- Setting up the Server
+- Managing Dependencies
+- Configuration Hassles
+
+Here's how containerization streamlines this process:
+
+- Container Image Creation
+- Deployment
+- Running on the Server
