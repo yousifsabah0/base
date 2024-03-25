@@ -9,7 +9,7 @@ In this guide we'll learn everything about Docker.
 
 ## What is Docker ?
 
-Docker is a platform that makes it easy to deploy your applications by separating the application code from the underlying infrastructure. With Docker, you can significantly reduce the time between writing code and deploying it. Docker achieves this by using a concept called "[Containerization](./002-containers.md)".
+Docker is a platform that makes it easy to deploy your applications by separating the application code from the underlying infrastructure. With Docker, you can significantly reduce the time between writing code and deploying it. Docker achieves this by using a concept called "[Containerization](./002-containerization.md)".
 
 ## How Docker works ?
 
