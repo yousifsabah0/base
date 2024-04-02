@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  postgre:
+  postgres:
     # For production, use a specific version of the Postgres
     #  image.
     image: postgres:latest
@@ -20,9 +20,6 @@ services:
       - POSTGRES_DB=${DATABASE_NAME}
       - POSTGRES_NAME=${DATABASE_USER}
       - POSTGRES_PASSWORD=${DATABASE_PASS}
-
-    env_file:
-      - .env
 
     volumes:
       - postgres_data:/var/lib/postgresql/data
